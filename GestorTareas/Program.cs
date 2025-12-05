@@ -22,7 +22,7 @@ while (true)
 
     if (op == "1")
     {
-        Console.WriteLine("Ingrese el nombre de la nueva tarea: ");
+        Console.WriteLine("\nIngrese el nombre de la nueva tarea: ");
         string tarea = Console.ReadLine();
 
         Tarea T = new Tarea(tarea);
@@ -32,7 +32,7 @@ while (true)
 
     else if(op == "2")
     {
-        Console.WriteLine("Ingrese el nombre de la tarea: ");
+        Console.WriteLine("\nIngrese el nombre de la tarea: ");
         string busqueda = Console.ReadLine();
 
         Tarea tareaEncontrada = tareas.FirstOrDefault(t => t.Titulo == busqueda);
@@ -51,6 +51,25 @@ while (true)
             Console.WriteLine("No se encontró la tarea mencionada ");
         }
 
+    }
+
+    else if(op == "3")
+    {
+        Console.WriteLine("\nIngrese el nombre de la tarea: ");
+        string busqueda = Console.ReadLine();
+
+        Tarea tareaEncontrada = tareas.FirstOrDefault(t => t.Titulo == busqueda);
+
+        if (tareaEncontrada != null)
+        {
+            tareas.Remove(tareaEncontrada);
+
+            Console.WriteLine("Se elimino la tarea");
+        }
+        else
+        {
+            Console.WriteLine("No se encontró la tarea mencionada ");
+        }
     }
 
     else if (op == "4")
